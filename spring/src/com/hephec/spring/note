@@ -1,0 +1,10 @@
+IOC容器可以管理Bean的生命周期，Spring允许在Bean的
+生命周期的特定的执行定制任务
+Spring IOC容器对Bean的生命周期进行管理的过程：
+-通过构造器或者工程方法创建Bean的实例
+-为Bean的属性设置值和其他Bean的引用
+-调用Bean的初始化方法
+-Bean可以使用
+-当容器关闭时，调用Bean的销毁方法
+在Bean的声明里设置init-method和destroy-mehtod属性为
+Bean指定初始化方法和销毁方法

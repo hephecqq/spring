@@ -40,7 +40,20 @@
 	 	scope="singleton"|"prototype"|""
 	 	singleton:每次都返回相同的bean
 	 	prototype:表示每次都返回不同bean
+	 	在struts2和spring整合的时候需要为struts2的action配置prototype属性
 	  -->
 	 
-		
+		<!-- SpEL:
+			SpEL使用#{...}作为定界符,所有在大括号中的字符都将被认为是SpEL
+			SpEL为bean的属性进行动态赋值提供了遍历
+			通过SpEL可以实现：
+			-通过bean的id对象bean进行引用
+			-调用方法及其应用对象中的属性
+			-计算表达式的值
+			-正则表达式的匹配
+			SpEL:引用Bean，属性和方法
+			value="#{prefixGenerator}"
+			value="#{prefixGenerator.suffix}"
+			
+		 -->
 </beans>

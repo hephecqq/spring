@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/application.xml</config>
 		<config>src/autowire.xml</config>
+		<config>src/spring_properties.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
