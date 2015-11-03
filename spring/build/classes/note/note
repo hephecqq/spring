@@ -1,0 +1,3 @@
+5. Spring_自动装配
+XML配置里的Bean自动转配
+在<bean>的autowire属性里指定自动装配的模式

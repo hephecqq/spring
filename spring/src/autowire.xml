@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="address" class="com.hephec.spring.autowire.Address">
+		<property name="city" value="beijing"></property>
+		<property name="street" value="chaoyang"></property>
+	</bean>
+	
+	<bean id="car" class="com.hephec.spring.autowire.Car">
+		<property name="brand" value="Audi"></property>
+		<property name="price" value="100.0"></property>
+	</bean>
+	<bean id="person" class="com.hephec.spring.autowire.Person" autowire="byName">
+		<property name="name" value="Tome"></property>
+		<!-- 可以使用autowire属性指定自动装配方式,byName根据bean的名字和当前bean的setter风格的属性名进行自动转配
+			如有匹配的，则自动装配，否则不装配
+		 	byType:根据bean的类型和当前bean的属性类型进行自动装配
+		 	若IOC容器中有一个以上的类型匹配的bean.,则抛异常
+		 -->
+		 
+		 <!--  abstract="true"为抽象bean，该bean不能被实例化 ，只用来被继承配置
+		 	若某个bean的class属性没有指定，则该bean必须是一个抽象bean
+		 -->
+	</bean>
+	<!-- bean配置的继承：
+		使用bean的parent属性指定继承bean的配置
+	 -->
+	<bean id="address2" class="com.hephec.spring.autowire.Address" parent="address">
+	</bean>
+	<!-- 
+		bean之间的依赖关系
+		要求在配置person时必须有一个关联的car
+		依赖于这个car
+		depends-on="car"
+	 -->	
+	 <!-- 配置bean的作用域
+	 	默认是单例的bean,创建一个bean对象，每次都返回一个bean对象
+	 	scope="singleton"|"prototype"|""
+	 	singleton:每次都返回相同的bean
+	 	prototype:表示每次都返回不同bean
+	  -->
+	 
+		
+</beans>
